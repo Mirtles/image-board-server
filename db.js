@@ -5,7 +5,7 @@ const databaseUrl = process.env.DATABASE_URL
 const db = new Sequelize(databaseUrl)
 
 db.sync()
-  .then(() => console.table({ "Cool!": `Connected to DB at ${databaseUrl}` }))
+  .then(() => console.table({ "Connected to DB:": databaseUrl }))
   .catch(console.error)
 
 module.exports = db
