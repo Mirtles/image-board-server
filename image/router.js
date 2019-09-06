@@ -12,4 +12,13 @@ router.get('/image', (req, res, next) => {
     .catch(err => next(err))
 })
 
+router.post('/image', (req, res, next) => {
+  Image.create(req.body)
+    .then(image => {
+      console.table(image)
+      res.send(image)
+    })
+    .catch(err => next(err))
+})
+
 module.exports = router
