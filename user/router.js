@@ -10,7 +10,7 @@ router.post('/signup', (req, res, next) => {
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10)
   }
-  console.log(user)
+  console.table({ "New user": user })
   User
     .create(user)
     .then(user => {
